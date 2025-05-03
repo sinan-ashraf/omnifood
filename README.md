@@ -3,21 +3,21 @@
 **⚠️ Disclaimer: This is not a real product or company.**  
 This website was built **purely as a front-end development project** to demonstrate my **HTML, CSS, and responsive web design skills**.
 
----
+
 
 ## 🧠 About This Project
 
 This is a fictional website for “Omnifood,” an AI-powered food subscription service. The idea and brand were imagined for educational purposes, allowing me to practice building a modern, clean, and fully responsive website layout.
 
----
+
 
 ## 🎨 Tech Stack
 
 - **HTML5**
 - **CSS3 (Flexbox, Grid, Media Queries)**
-- *(Optional)* JavaScript for interactive elements
 
----
+
+
 
 ## 🧾 Project Purpose
 
@@ -28,7 +28,7 @@ The goal of this project is to:
 - Build a professional-looking UI with real-world structure
 - Practice creating structured content sections such as features, testimonials, pricing, and a call to action
 
----
+
 
 ## 🌐 Omnifood (Fictional Service)
 
@@ -41,7 +41,7 @@ The goal of this project is to:
 - Eco-friendly packaging with reusable containers
 - Flexible subscription with pause and cancel anytime
 
----
+
 
 ## 📦 Pricing Plans (Fictional)
 
@@ -50,7 +50,7 @@ The goal of this project is to:
 | Starter  | $399        | 1         | 11am - 9pm        | Free     | -                           |
 | Complete | $649        | 2         | 24/7              | Free     | Access to latest recipes    |
 
----
+
 
 ## 💡 What This Website Includes
 
@@ -64,17 +64,5 @@ The goal of this project is to:
 - **Free trial sign-up form**
 - **Footer** with contact and social information
 
----
 
-## 🗂️ Suggested Folder Structure
 
-```bash
-📁 omnifood-website/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js (if needed)
-├── images/
-│   └── (meal photos, app mockups, logos)
-└── README.md
