@@ -1,79 +1,72 @@
 /*
+--- 01 TYPOGRAPHY SYSTEM
 
----- 1: TYPOGRAPHY SYSTEM
--- https://fonts.google.com
-
--- Font size system (px):
+- Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
--- Font weight:
-- Default: 400
-- Medium: 500
-- Semi-bold: 600
-- Bold: 700
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
 
--- Line heights:
-- Default: 1
-- Small: 1.05
-- Medium 1.2
-- Paragraph default: 1.6
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
 
--- Letter spacing
-- 0.5px
-- 0.75px
+- Letter spacing
+-0.5px
+0.75px
 
-****************************************************************************
+--- 02 COLORS
 
----- 2: COLORS:
+- Primary: #e67e22
+- Tints:
+#fdf2e9
+#fae5d3
+#eb984e
 
--- Primary: #e67e22
+- Shades: 
+#cf711f
+#45260a
 
--- Tints: #fdf2e9 #fae5d3
--- Shades: #cf711f
--- Accents:
--- Greys: #555 #333
--- https://maketintsandshades.com
--- https://coolors.co
+- Accents:
+- Greys
 
-****************************************************************************
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
 
+--- 05 SHADOWS
 
----- 3: IMAGES: 
--- https://www.unsplash.com
--- https://uiface.co
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
-****************************************************************************
+--- 06 BORDER-RADIUS
 
+Default: 9px
+Medium: 11px
 
----- 4: SHADOWS:
+--- 07 WHITESPACE
 
-****************************************************************************
-
----- 5: BORDER RADIUS:
--- Default: 9px
--- Medium: 11px
-
-****************************************************************************
-
----- 6: WHITESPACE:
-
-****************************************************************************
-
----- 7:  SPACING SYSTEM (px)
+- Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-****************************************************************************
-
 */
 
-html {
-  font-size: 62.5%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-*/ * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
 }
 
 body {
@@ -83,14 +76,14 @@ body {
   color: #555;
 }
 
-/***************************************/
-/* GENERAL REUSABLE COMPONENTS */
-/***************************************/
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
 
 .container {
-  /* Standard width */
+  /* 1140px */
   max-width: 120rem;
-  pad: 0 3.2rem;
+  padding: 0 3.2rem;
   margin: 0 auto;
 }
 
@@ -98,22 +91,32 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+
+  /* margin-bottom: 9.6rem; */
 }
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
 
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .grid--3-cols {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .grid--4-cols {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .grid--center-v {
@@ -125,13 +128,9 @@ body {
 .heading-tertiary {
   font-weight: 700;
   color: #333;
+  /* color: #45260a; */
+  /* color: #343a40; */
   letter-spacing: -0.5px;
-}
-
-.heading-tertiary {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 3.2rem;
 }
 
 .heading-primary {
@@ -146,9 +145,15 @@ body {
   margin-bottom: 9.6rem;
 }
 
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
 .subheading {
   display: block;
-  font-size: 1.6em;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #cf711f;
   text-transform: uppercase;
@@ -156,16 +161,24 @@ body {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
+
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
-  text-decoration: none;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
 
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
   transition: all 0.3s;
 }
 
@@ -178,7 +191,6 @@ body {
 .btn--full:hover,
 .btn--full:active {
   background-color: #cf711f;
-  color: #fff;
 }
 
 .btn--outline:link,
@@ -190,13 +202,28 @@ body {
 .btn--outline:hover,
 .btn--outline:active {
   background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; */
+
   /* Trick to add border inside */
-  box-shadow: inset 0 0 0 3px #ffff;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
 }
 
 .link:link,
 .link:visited {
-  display: inline;
+  display: inline-block;
   color: #e67e22;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
@@ -230,9 +257,14 @@ body {
   color: #e67e22;
 }
 
-/* HELPER/SETTINGS CLASSES */
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22; */
+  /* outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
 
-/* Template to reuse for adding margin. */
+/* HELPER/SETTINGS CLASSES */
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }

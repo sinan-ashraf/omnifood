@@ -1,25 +1,25 @@
-/***************************************/
+/**************************/
 /* HEADER */
-/***************************************/
+/**************************/
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fdf2e8;
+  background-color: #fdf2e9;
 
-  /* For sticky display: */
+  /* Because we want header to be sticky later */
   height: 9.6rem;
-  padding: 0 40px;
+  padding: 0 4.8rem;
 }
 
 .logo {
   height: 2.2rem;
 }
 
-/***************************************/
+/**************************/
 /* NAVIGATION */
-/***************************************/
+/**************************/
 
 .main-nav-list {
   list-style: none;
@@ -53,16 +53,16 @@
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
-  color: #cf711f;
+  background-color: #cf711f;
 }
 
-/***************************************/
+/**************************/
 /* HERO SECTION */
-/***************************************/
+/**************************/
 
 .section-hero {
   background-color: #fdf2e9;
-  padding: 9.6rem 0;
+  padding: 4.8rem 0 9.6rem 0;
 }
 
 .hero {
@@ -118,9 +118,9 @@
   font-weight: 700;
 }
 
-/***************************************/
+/**************************/
 /* FEATURED IN SECTION */
-/***************************************/
+/**************************/
 
 .section-featured {
   padding: 4.8rem 0 3.2rem 0;
@@ -147,9 +147,9 @@
   opacity: 50%;
 }
 
-/***************************************/
+/**************************/
 /* HOW IT WORKS SECTION */
-/***************************************/
+/**************************/
 
 .section-how {
   padding: 9.6rem 0;
@@ -168,49 +168,50 @@
 }
 
 .step-img-box {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
-/* Using pseudo elements for creating styles instead of modifying the HTML. */
-.step-img-box:before,
-.step-img-box:after {
+.step-img-box::before,
+.step-img-box::after {
   content: "";
   display: block;
   border-radius: 50%;
-  /* Note: Used relative in the parent: .step=img-box */
-  /* Used to center an element in CSS. */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.step-img-box:before {
+.step-img-box::before {
   width: 60%;
+  /* height: 60%; */
+
+  /* 60% of parent's width */
   padding-bottom: 60%;
 
   background-color: #fdf2e9;
-  /* To push the circle behind the image, giving it a lesser number. */
   z-index: -2;
 }
 
-.step-img-box:after {
+.step-img-box::after {
   width: 45%;
-  padding-bottom: 50%;
+  padding-bottom: 45%;
   background-color: #fae5d3;
   z-index: -1;
 }
 
 .step-img {
   width: 35%;
+  /* z-index: 10; */
 }
 
-/***************************************/
+/**************************/
 /* MEALS SECTION */
-/***************************************/
+/**************************/
 
 .section-meals {
   padding: 9.6rem 0;
@@ -219,13 +220,12 @@
 .meal {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 11px;
-  /* Makes the image contained within the rounded card */
   overflow: hidden;
   transition: all 0.4s;
 }
 
 .meal:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-1.2rem);
   box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 }
 
@@ -244,7 +244,6 @@
   padding: 0.4rem 0.8rem;
   font-size: 1.2rem;
   text-transform: uppercase;
-  background-color: #51cf66;
   color: #333;
   border-radius: 100px;
   font-weight: 600;
@@ -253,11 +252,9 @@
 .tag--vegetarian {
   background-color: #51cf66;
 }
-
 .tag--vegan {
   background-color: #94d82d;
 }
-
 .tag--paleo {
   background-color: #ffd43b;
 }
@@ -298,41 +295,26 @@
   font-size: 1.8rem;
 }
 
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.list-item {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-.list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
-}
-
-/***************************************/
+/**************************/
 /* TESTIMONIALS SECTION */
-/***************************************/
+/**************************/
+
 .section-testimonials {
   background-color: #fdf2e9;
   display: grid;
   grid-template-columns: 55fr 45fr;
   align-items: center;
-  padding: 3.8rem;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
 }
 
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4.8rem;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
 }
 
 .testimonial-img {
@@ -342,7 +324,7 @@
 }
 
 .testimonial-text {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.8;
   margin-bottom: 1.6rem;
 }
@@ -350,66 +332,67 @@
 .testimonial-name {
   font-size: 1.6rem;
   color: #6f6f6f;
-  text-align: center;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 1.5rem;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item {
+  overflow: hidden;
 }
 
 .gallery-item img {
-  width: 100%;
   display: block;
+  width: 100%;
   transition: all 0.4s;
-}
-
-figure {
-  width: 90%;
 }
 
 .gallery-item img:hover {
   transform: scale(1.1);
 }
 
-/***************************************/
+/**************************/
 /* MEALS SECTION */
-/***************************************/
+/**************************/
 
 .section-pricing {
   padding: 9.6rem 0;
 }
 
-.pricing-plan {
+.princing-plan {
   border-radius: 11px;
-  padding: 4.8rem;
+
   width: 75%;
 }
 
-.pricing-plan--starter {
+.princing-plan--starter {
   justify-self: end;
   border: 2px solid #fdf2e9;
   padding: 4.6rem;
 }
 
-.pricing-plan--complete {
+.princing-plan--complete {
   background-color: #fdf2e9;
   padding: 4.8rem;
   position: relative;
   overflow: hidden;
 }
 
-.pricing-plan--complete::after {
+.princing-plan--complete::after {
   content: "Best value";
   position: absolute;
   top: 6%;
   right: -18%;
-  background-color: #ffd43b;
-  color: #333;
+
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
   padding: 0.8rem 8rem;
   transform: rotate(45deg);
 }
@@ -447,7 +430,7 @@ figure {
   color: #6f6f6f;
 }
 
-.plan-signup {
+.plan-sing-up {
   text-align: center;
   margin-top: 4.8rem;
 }
@@ -460,7 +443,7 @@ figure {
 
 .feature-icon {
   color: #e67e22;
-  height: 2.4rem;
+  height: 3.2rem;
   width: 3.2rem;
   background-color: #fdf2e9;
   margin-bottom: 3.2rem;
@@ -478,4 +461,168 @@ figure {
 .feature-text {
   font-size: 1.8rem;
   line-height: 1.8;
+}
+
+/**************************/
+/* CTA SECTION */
+/**************************/
+
+.section-cta {
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / left */
+  padding: 4.8rem 0 12.8rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #e67e22; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  overflow: hidden;
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+}
+
+.cta .heading-secondary {
+  /* color: #45260a; */
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/**************************/
+/* FOOTER */
+/**************************/
+
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
 }
