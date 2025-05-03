@@ -1,4 +1,4 @@
-# 🍽️ Omnifood Website
+# Omnifood Website
 
 **Disclaimer: This is not a real product or company.**  
 This website was built **purely as a front-end development project** to demonstrate my **HTML, CSS, and responsive web design skills**.
