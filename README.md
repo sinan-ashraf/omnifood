@@ -1,17 +1,17 @@
 # 🍽️ Omnifood Website
 
-**⚠️ Disclaimer: This is not a real product or company.**  
+**Disclaimer: This is not a real product or company.**  
 This website was built **purely as a front-end development project** to demonstrate my **HTML, CSS, and responsive web design skills**.
 
 
 
-## 🧠 About This Project
+## About This Project
 
 This is a fictional website for “Omnifood,” an AI-powered food subscription service. The idea and brand were imagined for educational purposes, allowing me to practice building a modern, clean, and fully responsive website layout.
 
 
 
-## 🎨 Tech Stack
+## Tech Stack
 
 - **HTML5**
 - **CSS3 (Flexbox, Grid, Media Queries)**
@@ -19,7 +19,7 @@ This is a fictional website for “Omnifood,” an AI-powered food subscription 
 
 
 
-## 🧾 Project Purpose
+## Project Purpose
 
 The goal of this project is to:
 
@@ -30,7 +30,7 @@ The goal of this project is to:
 
 
 
-## 🌐 Omnifood (Fictional Service)
+## Omnifood (Fictional Service)
 
 > A fictional AI-driven meal subscription company focused on health and personalization.
 
@@ -43,7 +43,7 @@ The goal of this project is to:
 
 
 
-## 📦 Pricing Plans (Fictional)
+## Pricing Plans (Fictional)
 
 | Plan     | Price/Month | Meals/Day | Order Times       | Delivery | Bonus                        |
 |----------|-------------|-----------|-------------------|----------|-----------------------------|
@@ -52,7 +52,7 @@ The goal of this project is to:
 
 
 
-## 💡 What This Website Includes
+## What This Website Includes
 
 - **Hero section** with main headline
 - **"How It Works"** 3-step process with visuals
